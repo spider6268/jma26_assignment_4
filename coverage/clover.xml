@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1741727435169" clover="3.2.0">
+  <project timestamp="1741727435170" name="All files">
+    <metrics statements="84" coveredstatements="84" conditionals="32" coveredconditionals="32" methods="13" coveredmethods="13" elements="129" coveredelements="129" complexity="0" loc="84" ncloc="84" packages="1" files="3" classes="3"/>
+    <file name="Playlist.jsx" path="/Users/JoeAngello/jma26-assignment4/src/Playlist.jsx">
+      <metrics statements="61" coveredstatements="61" conditionals="18" coveredconditionals="18" methods="9" coveredmethods="9"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="23" count="34" type="stmt"/>
+      <line num="26" count="34" type="stmt"/>
+      <line num="28" count="34" type="stmt"/>
+      <line num="29" count="12" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="6" type="stmt"/>
+      <line num="38" count="6" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="43" count="34" type="stmt"/>
+      <line num="46" count="34" type="stmt"/>
+      <line num="47" count="6" type="stmt"/>
+      <line num="48" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="49" count="2" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="54" count="4" type="stmt"/>
+      <line num="55" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="59" count="3" type="stmt"/>
+      <line num="62" count="6" type="stmt"/>
+      <line num="63" count="6" type="stmt"/>
+      <line num="64" count="6" type="stmt"/>
+      <line num="67" count="34" type="stmt"/>
+      <line num="69" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="73" count="7" type="stmt"/>
+      <line num="74" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="75" count="6" type="stmt"/>
+      <line num="78" count="1" type="stmt"/>
+      <line num="80" count="7" type="stmt"/>
+      <line num="82" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="83" count="4" type="stmt"/>
+      <line num="86" count="3" type="stmt"/>
+      <line num="88" count="7" type="stmt"/>
+      <line num="92" count="34" type="stmt"/>
+      <line num="93" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="94" count="1" type="stmt"/>
+      <line num="95" count="1" type="stmt"/>
+      <line num="98" count="4" type="stmt"/>
+      <line num="99" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="100" count="3" type="stmt"/>
+      <line num="103" count="1" type="stmt"/>
+      <line num="105" count="4" type="stmt"/>
+      <line num="106" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="107" count="3" type="stmt"/>
+      <line num="110" count="1" type="stmt"/>
+      <line num="112" count="4" type="stmt"/>
+      <line num="115" count="34" type="stmt"/>
+      <line num="116" count="1" type="stmt"/>
+      <line num="117" count="1" type="stmt"/>
+      <line num="123" count="34" type="stmt"/>
+      <line num="130" count="34" type="stmt"/>
+      <line num="137" count="34" type="stmt"/>
+      <line num="156" count="186" type="cond" truecount="2" falsecount="0"/>
+      <line num="158" count="86" type="stmt"/>
+      <line num="161" count="100" type="stmt"/>
+    </file>
+    <file name="Podcast.jsx" path="/Users/JoeAngello/jma26-assignment4/src/Podcast.jsx">
+      <metrics statements="17" coveredstatements="17" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>
+      <line num="10" count="102" type="stmt"/>
+      <line num="11" count="102" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="22" type="stmt"/>
+      <line num="14" count="102" type="stmt"/>
+      <line num="15" count="102" type="cond" truecount="4" falsecount="0"/>
+      <line num="16" count="22" type="stmt"/>
+      <line num="18" count="80" type="cond" truecount="4" falsecount="0"/>
+      <line num="19" count="45" type="stmt"/>
+      <line num="21" count="35" type="cond" truecount="4" falsecount="0"/>
+      <line num="22" count="22" type="stmt"/>
+      <line num="25" count="13" type="stmt"/>
+      <line num="31" count="102" type="stmt"/>
+      <line num="38" count="102" type="stmt"/>
+      <line num="39" count="2" type="stmt"/>
+      <line num="40" count="2" type="stmt"/>
+      <line num="41" count="2" type="stmt"/>
+      <line num="45" count="102" type="stmt"/>
+    </file>
+    <file name="Song.jsx" path="/Users/JoeAngello/jma26-assignment4/src/Song.jsx">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="7" count="88" type="stmt"/>
+      <line num="14" count="88" type="stmt"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
+      <line num="19" count="88" type="stmt"/>
+    </file>
+  </project>
+</coverage>

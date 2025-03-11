@@ -1,0 +1,129 @@
+/*
+*********************************************************************************************
+This is the base of code from chatGPT, but it did not fully work and has been modified by me. 
+So I have some clue of what I am doing, I just needed a good base to get started.
+*********************************************************************************************
+*/
+
+
+**************Playlist.test.jsx************
+
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import Playlist from './Playlist';
+import '@testing-library/jest-dom'; // for matchers like toBeInTheDocument
+
+// Mocking the audio.json data
+jest.mock('./audio.json', () => [
+  { title: 'Song 1', artist: 'Artist 1' },
+  { title: 'Song 2', artist: 'Artist 2' },
+  { episodeTitle: 'Podcast 1', season: 1, episode: 1 },
+]);
+
+describe('Playlist Component', () => {
+  test('renders playlist and buttons', () => {
+    render(<Playlist />);
+
+    // Check if the title is rendered
+    expect(screen.getByText(/Welcome to JMA26's Playlist/i)).toBeInTheDocument();
+
+    // Check if buttons are present
+    expect(screen.getByText(/Play\/Pause/i)).toBeInTheDocument();
+    expect(screen.getByText(/Prev/i)).toBeInTheDocument();
+    expect(screen.getByText(/Next/i)).toBeInTheDocument();
+    expect(screen.getByText(/Shuffle/i)).toBeInTheDocument();
+  });
+
+  test('clicking play/pause button toggles the status', () => {
+    render(<Playlist />);
+
+    // Click the play/pause button
+    const playPauseButton = screen.getByText(/Play\/Pause/i);
+    fireEvent.click(playPauseButton);
+
+    // Check if "Playing" status is shown
+    expect(screen.getByText(/Playing:/i)).toBeInTheDocument();
+
+    // Click again to pause
+    fireEvent.click(playPauseButton);
+    expect(screen.getByText(/Paused:/i)).toBeInTheDocument();
+  });
+
+  test('clicking next button moves to next item in playlist', () => {
+    render(<Playlist />);
+
+    // Get the next button
+    const nextButton = screen.getByText(/Next/i);
+
+    // Check initial item
+    expect(screen.getByText(/Song 1/i)).toBeInTheDocument();
+
+    // Click next
+    fireEvent.click(nextButton);
+
+    // After clicking next, the next song/podcast should be shown
+    expect(screen.getByText(/Song 2/i)).toBeInTheDocument();
+  });
+
+  test('clicking previous button moves to previous item in playlist', () => {
+    render(<Playlist />);
+
+    // Get the previous button
+    const prevButton = screen.getByText(/Prev/i);
+
+    // Click next to go forward first
+    fireEvent.click(screen.getByText(/Next/i));
+
+    // Then click previous
+    fireEvent.click(prevButton);
+
+    // After clicking previous, it should return to the first item
+    expect(screen.getByText(/Song 1/i)).toBeInTheDocument();
+  });
+
+  test('shuffle button shuffles the playlist', () => {
+    render(<Playlist />);
+
+    // Click shuffle button
+    const shuffleButton = screen.getByText(/Shuffle/i);
+    fireEvent.click(shuffleButton);
+
+    // Check that the order has changed (the exact order won't be predictable, but we can ensure it isn't the initial order)
+    const songTitles = screen.getAllByText(/Song/).map(item => item.textContent);
+    expect(songTitles[0]).not.toBe('Song 1');  // Check the first item is not "Song 1" anymore
+  });
+});
+
+************Song.test.jsx**************
+
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import Song from './Song';
+
+// Mock the document.getElementById to avoid errors
+beforeAll(() => {
+  document.getElementById = jest.fn(() => ({ innerHTML: '' }));
+});
+
+describe('Song Component', () => {
+  const mockSong = {
+    title: 'Test Song',
+    artist: 'Test Artist',
+    year: 2024,
+    item: 1,
+  };
+
+  test('renders Song component correctly', () => {
+    render(<Song {...mockSong} />);
+    expect(screen.getByText(/Song: Test Song/i)).toBeInTheDocument();
+    expect(screen.getByText(/Artist: Test Artist/i)).toBeInTheDocument();
+    expect(screen.getByText(/Year: 2024/i)).toBeInTheDocument();
+  });
+
+  test('double-clicking the Song updates statusBar', () => {
+    render(<Song {...mockSong} />);
+    const songElement = screen.getByText(/Song: Test Song/i);
+    fireEvent.doubleClick(songElement);
+    expect(console.log).toHaveBeenCalledWith(expect.stringContaining('you double clicked from song.jsx'));
+  });
+});
